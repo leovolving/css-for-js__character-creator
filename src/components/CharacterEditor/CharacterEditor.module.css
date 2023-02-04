@@ -47,3 +47,67 @@
 .controlColumn {
   width: 50%;
 }
+
+@media (max-width: 600px) {
+  .characterEditor {
+    padding-top: 24px;
+  }
+
+  .title, .header {
+    width: 100%;
+  }
+
+  .perspective {
+    z-index: 1;
+  }
+
+  .maxWidthWrapper {
+    z-index: 4
+  }
+
+  .controlColumn {
+    position: absolute;
+    height: 150px;
+    white-space: nowrap;
+    overflow-x: scroll; /* minimal scrollbar visible on iOS Chrome and Safari */
+    bottom: -372px;
+    width: calc(100vw - 32px);
+    margin-left: -16px;
+    z-index: 3;
+  }
+
+
+  /* HACK: using these risky selectors instead of
+      the Components' css modules to keep all of
+      the stretch task changes together
+  */
+  /* ControlPane */
+  .controlColumn > div {
+    display: inline-block;
+    margin: 0;
+    margin-right: 16px;
+    width: 300px;
+  }
+  /* ButtonRow */
+  .controlColumn > div > div {
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 16px;
+  }
+
+  .characterWrapper {
+    position: relative;
+    width: 90%;
+    z-index: 2;
+    margin-top: -168px;
+    margin-left: auto;
+    /* adding margin-right: auto made the div appear uncentered */
+    padding-bottom: 64px;
+  }
+
+  footer {
+    z-index: 2;
+  }
+
+}
